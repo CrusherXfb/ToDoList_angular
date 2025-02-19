@@ -1,0 +1,11 @@
+<div class="todo-list-container">
+  <h1>Список задач</h1>
+  <app-todo-form (add)="addTodo($event)"></app-todo-form>
+  <app-todo-item
+    *ngFor="let todo of todos; let i = index"
+    [todo]="todo"
+    (toggle)="toggleTodo(i)"
+    (delete)="deleteTodo(i)">
+  </app-todo-item>
+  <button (click)="clearCompleted()">Удалить выполненные</button>
+</div>
